@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Miguel Matira Gelbolingo | Portfolio</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+
+    <script src="script.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+
+    <!-- TopNavBar -->
+    <header
+        class="absolute md:fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md no-border tonal-shift bg-slate-50/50">
+        <nav class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-4 md:px-8 py-4 gap-4 md:gap-0">
+            <div class="text-xl font-bold tracking-tighter text-slate-900 dark:text-slate-50 text-center">
+                Miguel Matira Gelbolingo
+            </div>
+            <div
+                class="flex flex-wrap justify-center gap-4 md:gap-8 items-center font-['Plus_Jakarta_Sans'] font-medium text-sm tracking-tight">
+                <a class="text-blue-700 dark:text-blue-400 font-bold border-b-2 border-blue-700 dark:border-blue-400 pb-1"
+                    href="index.html">Home</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors"
+                    href="gallery.html">Gallery</a>
+                <div class="relative group">
+                    <button
+                        class="bg-primary !text-white px-6 py-2 rounded-full font-bold scale-95 duration-200 transition-all hover:bg-primary-dim shadow-sm flex items-center gap-2">
+                        Contact
+                        <span
+                            class="material-symbols-outlined text-sm transition-transform group-hover:rotate-180">expand_more</span>
+                    </button>
+                    <div
+                        class="absolute right-0 mt-2 w-48 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-right scale-95 group-hover:scale-100 flex flex-col p-2 z-50">
+                        <a href="https://www.facebook.com/migolxlr" target="_blank"
+                            class="flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 text-sm font-bold text-slate-700 dark:text-slate-200 transition-colors">
+                            <span class="material-symbols-outlined text-base text-blue-600">thumb_up</span> Facebook
+                        </a>
+                        <a href="https://www.instagram.com/migolxlr/" target="_blank"
+                            class="flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 text-sm font-bold text-slate-700 dark:text-slate-200 transition-colors">
+                            <span class="material-symbols-outlined text-base text-pink-600">photo_camera</span>
+                            Instagram
+                        </a>
+                        <a href="mailto:miguelmatiragelbolingo@gmail.com"
+                            class="flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 text-sm font-bold text-slate-700 dark:text-slate-200 transition-colors">
+                            <span
+                                class="material-symbols-outlined text-base text-gray-600 dark:text-gray-300">mail</span>
+                            Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-32 pb-20 overflow-hidden">
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-4 md:px-8 py-10 lg:py-32 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6 md:space-y-8 text-center md:text-left flex flex-col items-center md:items-start">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold uppercase tracking-wider">
+                    <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                    Available for Projects
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tighter text-on-surface leading-[1.1]">
+                    Digital Curator <br>
+                    <span class="text-primary italic">& Photographer.</span>
+                </h1>
+                <p class="text-base sm:text-lg lg:text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                    Merging technical precision with visual artistry. Creative freelancer by day, programmer/developer
+                    by night, capturing life through lenses and lines of code.
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-2">
+                    <a href="gallery.html"
+                        class="inline-block bg-primary bg-gradient-to-r from-primary to-primary-container text-white px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:opacity-90 transition-all">
+                        View Work
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                    <div class="flex gap-2">
+                        <a class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-high hover:bg-surface-container-highest transition-colors text-primary"
+                            href="gallery.html">
+                            <span class="material-symbols-outlined">photo_camera</span>
+                        </a>
+                        <a class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-high hover:bg-surface-container-highest transition-colors text-primary"
+                            href="#">
+                            <span class="material-symbols-outlined">code</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 relative">
+                <div class="aspect-[4/5] rounded-3xl overflow-hidden bg-surface-container-high relative group">
+                    <img alt="Miguel Matira Gelbolingo"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        data-alt="Professional portrait of a creative professional in studio lighting"
+                        src="./assets/IMG_4126_noGLOW.jpg">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <p class="font-bold text-lg">Miguel Matira Gelbolingo</p>
+                        <p class="text-sm opacity-80">Photographer | Videographer | Developer</p>
+                    </div>
+                </div>
+                <!-- Abstract UI element -->
+                <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-primary/10 rounded-full blur-3xl -z-10"></div>
+            </div>
+        </section>
+
+        <!-- Summary & Bento Grid -->
+        <section class="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-20 space-y-8 md:space-y-12">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Summary Card -->
+                <div
+                    class="lg:col-span-2 p-6 md:p-10 rounded-3xl bg-surface-container-lowest shadow-[0_24px_40px_-15px_rgba(43,47,52,0.04)] space-y-6">
+                    <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-on-surface">About</h2>
+                    <p class="text-on-surface-variant leading-relaxed text-base md:text-lg">A freelancer as a photographer,
+                        videographer, video/photo editor, graphic designer and a web designer. Loves to create creative
+                        digital works, and performs prenups and wedding photos for photography sessions, and
+                        SDE/highlight videos for events and weddings. Also knows HTML, CSS, JavaScript and PHP for web
+                        designing/web development, and also computer system servicing.</p>
+                    <div class="flex flex-col sm:flex-row gap-6 md:gap-12 pt-4">
+                        <div>
+                            <p class="text-2xl font-bold text-primary">3+</p>
+                            <p class="text-xs font-medium uppercase tracking-widest text-outline">Years Experience</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-primary">30+</p>
+                            <p class="text-xs font-medium uppercase tracking-widest text-outline">Projects/contents
+                                Delivered</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Location Card -->
+                <div class="p-6 md:p-10 rounded-3xl bg-surface-container-high flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <span class="material-symbols-outlined text-primary text-3xl">location_on</span>
+                        <h3 class="text-xl font-bold">Based in</h3>
+                        <p class="text-on-surface-variant">Malabon, Philippines<br>Available worldwide for remote and
+                            on-site projects.</p>
+                    </div>
+                    <div class="mt-8 rounded-xl overflow-hidden h-32 relative group">
+                        <img src="./assets/malabon.webp" alt="Malabon, Philippines Map" loading="lazy"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline -->
+        <section class="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-20 border-t border-surface-container">
+            <div class="flex flex-col lg:flex-row gap-10 md:gap-16">
+                <div class="lg:w-1/3">
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-on-surface">Professional <br><span
+                            class="text-primary">Journey</span></h2>
+                    <p class="mt-4 md:mt-6 text-on-surface-variant leading-relaxed">
+                        A timeline of my professional growth across diverse technical and creative roles.
+                    </p>
+                </div>
+                <div class="lg:w-2/3 space-y-12 md:space-y-16">
+                    <!-- Item 1 -->
+                    <div class="group relative">
+                        <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8">
+                            <span class="text-xs font-bold uppercase tracking-widest text-primary shrink-0">2024 —
+                                PRESENT</span>
+                            <div class="space-y-4">
+                                <h3
+                                    class="text-2xl font-bold text-on-surface group-hover:text-primary transition-colors">
+                                    Photographer/Videographer/Editor (Freelancing)</h3>
+                                <p class="text-on-surface-variant leading-relaxed">Performed the duties of capturing
+                                    moments from events such as weddings, birthday parties, school events, etc. and
+                                    turning them into memories, while including creative touches and polishes as a way
+                                    to present my content creatively.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-3 py-1 bg-surface-container-high rounded-md text-xs font-medium text-on-surface-variant">Production
+                                        Management</span>
+                                    <span
+                                        class="px-3 py-1 bg-surface-container-high rounded-md text-xs font-medium text-on-surface-variant">Creativity
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="group relative">
+                        <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8">
+                            <span class="text-xs font-bold uppercase tracking-widest text-primary shrink-0">2021 —
+                                2023<br></span>
+                            <div class="space-y-4">
+                                <h3
+                                    class="text-2xl font-bold text-on-surface group-hover:text-primary transition-colors">
+                                    Android Development for Xiaomi Devices (Redmi 9, Mi 11 LE; personal projects)</h3>
+                                <p class="text-on-surface-variant leading-relaxed">
+                                    Developed and performed proprietary device codes and modification of device firmware
+                                    to adapt and utilize in shipping an unofficial software (custom ROMs) that is faster
+                                    and bloatware-free, with additional features for users to utilize.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-3 py-1 bg-surface-container-high rounded-md text-xs font-medium text-on-surface-variant">Android
+                                        Development</span>
+                                    <span
+                                        class="px-3 py-1 bg-surface-container-high rounded-md text-xs font-medium text-on-surface-variant">OSS</span>
+                                    <span
+                                        class="px-3 py-1 bg-surface-container-high rounded-md text-xs font-medium text-on-surface-variant">Custom
+                                        ROM Development</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Overview -->
+        <section class="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-20">
+            <div class="bg-surface-container-low rounded-[2rem] p-8 lg:p-20 overflow-hidden relative">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full -mr-48 -mt-48 blur-3xl"></div>
+                <h2 class="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center">Technical Arsenal</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative z-10">
+                    <div class="space-y-6">
+                        <div class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined">photo_library</span>
+                        </div>
+                        <h4 class="text-xl font-bold">Creative</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-2 text-on-surface-variant"><span
+                                    class="w-1 h-1 rounded-full bg-primary"></span>DaVinci Resolve</li>
+                            <li class="flex items-center gap-2 text-on-surface-variant"><span
+                                    class="w-1 h-1 rounded-full bg-primary"></span>Adobe Lightroom</li>
+                            <li class="flex items-center gap-2 text-on-surface-variant"><span
+                                    class="w-1 h-1 rounded-full bg-primary"></span>Adobe Photoshop</li>
+                            <li class="flex items-center gap-2 text-on-surface-variant"><span
+                                    class="w-1 h-1 rounded-full bg-primary"></span>Canva</li>
+                        </ul>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined">terminal</span>
+                        </div>
+                        <h4 class="text-xl font-bold">Development</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-2 text-on-surface-variant"><span
+                                    class="w-1 h-1 rounded-full bg-primary"></span>HTML5</li>
+                            <li class="flex items-center gap-2 text-on-surface-variant"><span
+                                    class="w-1 h-1 rounded-full bg-primary"></span>CSS</li>
+                            <li class="flex items-center gap-2 text-on-surface-variant"><span
+                                    class="w-1 h-1 rounded-full bg-primary"></span>JavaScript</li>
+                            <li class="flex items-center gap-2 text-on-surface-variant"><span
+                                    class="w-1 h-1 rounded-full bg-primary"></span>PHP</li>
+                        </ul>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined">construction</span>
+                        </div>
+                        <h4 class="text-xl font-bold">General</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-2 text-on-surface-variant"><span
+                                    class="w-1 h-1 rounded-full bg-primary"></span>Project Management</li>
+                            <li class="flex items-center gap-2 text-on-surface-variant"><span
+                                    class="w-1 h-1 rounded-full bg-primary"></span>Photography/Videography</li>
+                            <li class="flex items-center gap-2 text-on-surface-variant"><span
+                                    class="w-1 h-1 rounded-full bg-primary"></span>Editing</li>
+                            <li class="flex items-center gap-2 text-on-surface-variant"><span
+                                    class="w-1 h-1 rounded-full bg-primary"></span>Graphic Designing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-20">
+            <div class="flex flex-col lg:flex-row justify-between items-start gap-8 md:gap-12">
+                <div class="max-w-md w-full text-center lg:text-left">
+                    <h2 class="text-2xl md:text-3xl font-bold">Education</h2>
+                    <p class="mt-4 text-on-surface-variant leading-relaxed">Continuous learning is at the heart of my
+                        professional philosophy, combining formal education with industry-standard certifications.</p>
+                </div>
+                <div class="flex-1 w-full grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                    <div class="p-6 md:p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant/10">
+                        <p class="text-xs font-bold text-primary mb-2 uppercase tracking-widest">senior high school</p>
+                        <h4 class="font-bold text-lg mb-1">TVL-ICT: Animation & Programming .NET NCII</h4>
+                        <p class="text-on-surface-variant text-sm">Tinajeros National High School</p>
+                        <p class="text-outline text-xs mt-4">2024 - 2026</p>
+                    </div>
+                    <div class="p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant/10">
+                        <p class="text-xs font-bold text-primary mb-2 uppercase tracking-widest">Certification</p>
+                        <h4 class="font-bold text-lg mb-1">TESDA: Animation NCII</h4>
+                        <p class="text-on-surface-variant text-sm">VIVA EXCEL INC.</p>
+                        <p class="text-outline text-xs mt-4">2025 - 2026</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full border-t border-slate-200/20 dark:border-slate-800/20 bg-slate-50 dark:bg-slate-950">
+        <div class="flex flex-col md:flex-row justify-between items-center px-4 md:px-8 py-8 md:py-12 max-w-7xl mx-auto gap-6 md:gap-0">
+            <div class="space-y-4 text-center md:text-left">
+                <div class="text-lg font-black text-slate-900 dark:text-slate-100">Miguel Matira Gelbolingo</div>
+                <p class="font-['Inter'] text-xs font-medium uppercase tracking-widest text-slate-500">
+                    © 2026 Miguel Matira Gelbolingo. Built with Gemini, Antigravity, and Tailwind CSS.
+                </p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6 md:gap-8">
+                <a class="font-['Inter'] text-xs font-medium uppercase tracking-widest text-slate-500 hover:text-blue-600 transition-opacity"
+                    href="https://www.facebook.com/migolxlr" target="_blank">Facebook</a>
+                <a class="font-['Inter'] text-xs font-medium uppercase tracking-widest text-slate-500 hover:text-blue-600 transition-opacity"
+                    href="https://www.instagram.com/migolxlr/" target="_blank">Instagram</a>
+                <a class="font-['Inter'] text-xs font-medium uppercase tracking-widest text-slate-500 hover:text-blue-600 transition-opacity"
+                    href="mailto:miguelmatiragelbolingo@gmail.com">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FAB -->
+    <button
+        class="fixed bottom-8 right-8 w-14 h-14 bg-primary rounded-full text-on-primary shadow-xl flex items-center justify-center hover:scale-110 active:scale-95 transition-transform z-50">
+        <span class="material-symbols-outlined">mail</span>
+    </button>
+
+</body>
+
+</html>
