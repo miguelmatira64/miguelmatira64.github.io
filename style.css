@@ -43,17 +43,49 @@
     --ring: 212.7 26.8% 83.9%;
 }
 
+body {
+    caret-color: transparent !important;
+}
+
+input, textarea, [contenteditable="true"] {
+    caret-color: auto !important;
+}
+
+/* ── Local Inter Font ──────────────────────────────────────── */
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter-Regular.woff2') format('woff2');
+    font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter-Medium.woff2') format('woff2');
+    font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter-SemiBold.woff2') format('woff2');
+    font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter-Bold.woff2') format('woff2');
+    font-weight: 700; font-style: normal; font-display: swap;
+}
+
 /* Base Refinements */
 html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
     overflow-x: hidden;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 /* Material Symbols */
@@ -90,6 +122,44 @@ body {
     backdrop-filter: blur(12px) saturate(150%);
     border: 1px solid hsl(var(--border) / 0.5);
     border-radius: 9999px;
+}
+
+/* Footer Gradient & Blur */
+.footer-gradient {
+    background: linear-gradient(90deg, transparent, hsl(var(--foreground) / 0.1), transparent);
+    opacity: 0.8;
+}
+.dark .footer-gradient {
+    background: linear-gradient(90deg, transparent, hsl(var(--foreground) / 0.15), transparent);
+    opacity: 0.6;
+}
+
+footer {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: hsl(var(--background) / 0.7);
+    border-top: 1px solid hsl(var(--border) / 0.5);
+    z-index: 40;
+}
+
+/* Dropdown Hover State (Grayed out initially, high-contrast on hover) */
+.dropdown-item {
+    color: hsl(var(--muted-foreground));
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+    color: hsl(var(--foreground));
+    background-color: hsl(var(--muted) / 0.5);
+}
+
+.dropdown-item .material-symbols-outlined {
+    filter: grayscale(1) opacity(0.5);
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover .material-symbols-outlined {
+    filter: grayscale(0) opacity(1);
 }
 
 /* Bento Card Styles */
@@ -169,8 +239,9 @@ body {
 
 @keyframes float {
     0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(30px, -50px) scale(1.1); }
-    66% { transform: translate(-20px, 20px) scale(0.9); }
+    25% { transform: translate(60px, -40px) scale(1.1); }
+    50% { transform: translate(-40px, 80px) scale(0.95); }
+    75% { transform: translate(80px, 40px) scale(1.05); }
 }
 
 @keyframes pulse-green {
@@ -188,15 +259,35 @@ body {
 }
 
 .animate-float {
-    animation: float 15s ease-in-out infinite;
+    animation: float 20s cubic-bezier(0.4, 0, 0.2, 1) infinite underline reverse;
 }
 
-/* Responsive Utilities */
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+    25% { transform: translate(5vw, -5vh) scale(1.1) rotate(5deg); }
+    50% { transform: translate(-2vw, 10vh) scale(0.9) rotate(-10deg); }
+    75% { transform: translate(-8vw, -3vh) scale(1.05) rotate(8deg); }
+}
+
+/* Removed hero-padding-fix to let utility classes manage the space */
+
 @media (max-width: 768px) {
     .nav-label { display: none; }
     .nav-icon { display: block !important; }
     .brand-hide-mobile { display: none; }
-    .hero-padding-fix { padding-top: 120px !important; }
+    .hero-padding-fix { padding-top: 1rem !important; }
+}
+
+/* Scroll reveal system */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .nav-icon { display: none; }

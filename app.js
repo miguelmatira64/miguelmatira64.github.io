@@ -29,6 +29,36 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- Modal Logic ---
     const modal = document.getElementById("meta-modal");
     const closeBtn = document.getElementById("close-modal");
+    const previewImg = document.getElementById("meta-preview");
+    const fullViewBtn = document.getElementById("open-full-view");
+    const modalImageContainer = document.getElementById("modal-image-container");
+
+    // --- Lightbox Logic ---
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeLightboxBtn = document.getElementById("close-lightbox");
+
+    const openLightbox = (src) => {
+        if (!lightbox || !lightboxImg) return;
+        lightboxImg.src = src;
+        lightbox.classList.remove("hidden");
+        // Force reflow
+        lightbox.offsetHeight;
+        lightbox.classList.remove("opacity-0", "pointer-events-none");
+        lightboxImg.classList.remove("scale-95");
+        lightboxImg.classList.add("scale-100");
+    };
+
+    const closeLightbox = () => {
+        if (!lightbox || !lightboxImg) return;
+        lightbox.classList.add("opacity-0", "pointer-events-none");
+        lightboxImg.classList.remove("scale-100");
+        lightboxImg.classList.add("scale-95");
+        setTimeout(() => {
+            lightbox.classList.add("hidden");
+            lightboxImg.src = "";
+        }, 500);
+    };
 
     const closeModal = () => {
         if (modal) {
@@ -44,9 +74,60 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    if (closeLightboxBtn) closeLightboxBtn.addEventListener("click", closeLightbox);
+    if (lightbox) {
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox || e.target === lightboxImg) closeLightbox();
+        });
+    }
+
+    // Modal Image / Full View Triggers
+    if (fullViewBtn && previewImg) {
+        fullViewBtn.addEventListener("click", () => openLightbox(previewImg.src));
+    }
+    if (modalImageContainer && previewImg) {
+        modalImageContainer.addEventListener("click", () => openLightbox(previewImg.src));
+    }
+
+    // Learn More smooth scroll
+    const learnMoreBtn = document.querySelector('a[href="#"], .learn-more-btn');
+    if (learnMoreBtn) {
+        learnMoreBtn.addEventListener("click", (e) => {
+            const bioSection = document.getElementById("biography");
+            if (bioSection) {
+                e.preventDefault();
+                bioSection.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    }
+
+    // --- Scroll Reveal Logic ---
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                // Optional: stop observing after reveal for performance
+                // observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    const revealElements = document.querySelectorAll(".reveal");
+    revealElements.forEach(el => observer.observe(el));
+
     // Event delegation for opening the modal
     document.body.addEventListener("click", (e) => {
         const btn = e.target.closest(".open-modal");
+        
+        // Also allow clicking the bento-card image to open meta-modal/preview
+        const card = e.target.closest(".bento-card");
+        const cardImage = card ? card.querySelector("img") : null;
+        
         if (btn && modal) {
             const dataFields = ["camera", "aperture", "shutter", "iso", "focal", "file"];
             dataFields.forEach(field => {
@@ -54,10 +135,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (element) element.innerText = btn.getAttribute(`data-${field}`) || "N/A";
             });
 
+            if (previewImg) {
+                const filename = btn.getAttribute("data-file");
+                // Remove relative indicator for consistency and check if full path is needed
+                previewImg.src = filename ? `assets/${filename}` : "";
+            }
+
             modal.classList.remove("hidden");
-            // Force reflow for animation
             modal.offsetHeight;
             modal.classList.remove("opacity-0", "pointer-events-none");
+        } else if (card && !e.target.closest("button") && !e.target.closest("a") && cardImage) {
+            openLightbox(cardImage.src);
         }
     });
 
@@ -68,7 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const image = entry.target;
-                    // Already set in src, but can be used for data-src if needed
                     observer.unobserve(image);
                 }
             });
