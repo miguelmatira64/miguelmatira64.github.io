@@ -1,42 +1,78 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Modal Logic for Photography Metadata
+    // --- Dark Mode Logic ---
+    const html = document.documentElement;
+    const themeToggle = document.getElementById("theme-toggle");
+
+    // Initialize theme from localStorage or system preference
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark" || (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        html.classList.add("dark");
+    } else {
+        html.classList.remove("dark");
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+            html.classList.toggle("dark");
+            const isDark = html.classList.contains("dark");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+            
+            // Subtle rotation animation for the icon if needed
+            const icon = themeToggle.querySelector(".material-symbols-outlined");
+            if (icon) {
+                icon.style.transform = "rotate(360deg)";
+                setTimeout(() => icon.style.transform = "", 500);
+            }
+        });
+    }
+
+    // --- Modal Logic ---
     const modal = document.getElementById("meta-modal");
     const closeBtn = document.getElementById("close-modal");
 
-    // Helper to close modal
     const closeModal = () => {
-        if (modal) modal.classList.add("hidden");
+        if (modal) {
+            modal.classList.add("opacity-0", "pointer-events-none");
+            setTimeout(() => modal.classList.add("hidden"), 300);
+        }
     };
 
     if (closeBtn) closeBtn.addEventListener("click", closeModal);
     if (modal) {
         modal.addEventListener("click", (e) => {
-            if (e.target === modal) closeModal(); // Click outside to close
+            if (e.target === modal) closeModal();
         });
     }
 
-    // Event delegation for opening the modal (works for dynamically loaded buttons too)
+    // Event delegation for opening the modal
     document.body.addEventListener("click", (e) => {
         const btn = e.target.closest(".open-modal");
         if (btn && modal) {
-            // Read data attributes from the clicked button
-            const camera = btn.getAttribute("data-camera") || "N/A";
-            const aperture = btn.getAttribute("data-aperture") || "N/A";
-            const shutter = btn.getAttribute("data-shutter") || "N/A";
-            const iso = btn.getAttribute("data-iso") || "N/A";
-            const focal = btn.getAttribute("data-focal") || "N/A";
-            const file = btn.getAttribute("data-file") || "N/A";
+            const dataFields = ["camera", "aperture", "shutter", "iso", "focal", "file"];
+            dataFields.forEach(field => {
+                const element = document.getElementById(`meta-${field}`);
+                if (element) element.innerText = btn.getAttribute(`data-${field}`) || "N/A";
+            });
 
-            // Populate modal fields
-            document.getElementById("meta-camera").innerText = camera;
-            document.getElementById("meta-aperture").innerText = aperture;
-            document.getElementById("meta-shutter").innerText = shutter;
-            document.getElementById("meta-iso").innerText = iso;
-            document.getElementById("meta-focal").innerText = focal;
-            document.getElementById("meta-file").innerText = file;
-
-            // Show modal
             modal.classList.remove("hidden");
+            // Force reflow for animation
+            modal.offsetHeight;
+            modal.classList.remove("opacity-0", "pointer-events-none");
         }
     });
+
+    // --- Performance Optimization: Lazy Images ---
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const image = entry.target;
+                    // Already set in src, but can be used for data-src if needed
+                    observer.unobserve(image);
+                }
+            });
+        });
+        lazyImages.forEach(img => imageObserver.observe(img));
+    }
 });
