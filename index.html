@@ -1,318 +1,418 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Miguel Matira Gelbolingo | Portfolio</title>
+    <title>Miguel Gelbolingo — Photographer & Videographer</title>
+    <meta name="description" content="Freelance photographer and videographer based in Malabon, Philippines. Specializing in weddings, events, portraits, and creative visual projects.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Miguel Gelbolingo — Photographer & Videographer">
+    <meta property="og:description" content="Capturing weddings, events, and portraits with a personal touch. Based in Malabon, available nationwide.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📷</text></svg>">
 
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="app.js" defer></script>
 </head>
 
-<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container bg-grid">
+<body class="bg-background text-foreground selection:bg-primary selection:text-primary-foreground bg-grid">
+
+    <!-- Film Grain Overlay -->
+    <div class="noise-overlay"></div>
     <div class="top-gradient-overlay"></div>
 
-    <!-- Background Glow Orbs -->
+    <!-- Ambient Orbs -->
     <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
-        <div class="glow-orb glow-orb-primary w-[500px] h-[500px] top-[-100px] left-[-100px] animate-float"></div>
-        <div class="glow-orb glow-orb-secondary w-[400px] h-[400px] bottom-[10%] right-[-50px] animate-float" style="animation-duration: 25s; animation-delay: -5s;"></div>
-        <div class="glow-orb glow-orb-accent w-[300px] h-[300px] top-[40%] right-[20%] animate-float" style="animation-duration: 18s; animation-delay: -2s; opacity: 0.3;"></div>
+        <div class="glow-orb glow-orb-primary w-[550px] h-[550px] top-[-100px] left-[-100px] animate-float"></div>
+        <div class="glow-orb glow-orb-secondary w-[420px] h-[420px] bottom-[10%] right-[-60px] animate-float" style="animation-duration: 26s; animation-delay: -6s;"></div>
+        <div class="glow-orb glow-orb-accent w-[340px] h-[340px] top-[40%] right-[16%] animate-float" style="animation-duration: 20s; animation-delay: -3s; opacity: 0.35;"></div>
     </div>
 
-    <!-- TopNavBar -->
-    <header class="fixed top-8 left-1/2 -translate-x-1/2 w-[90%] max-w-4xl z-50 px-6 py-3 glass-pill shadow-xl">
-        <nav class="flex flex-row justify-between items-center gap-4">
-            <div class="font-bold tracking-[0.5em] text-primary text-[10px] whitespace-nowrap brand-hide-mobile">
-                T&nbsp;H&nbsp;E&nbsp;&nbsp;&nbsp;P&nbsp;O&nbsp;R&nbsp;T&nbsp;F&nbsp;O&nbsp;L&nbsp;I&nbsp;O
+    <!-- Top Navigation (Guaranteed zero truncation, perfectly proportioned icon margins) -->
+    <header class="fixed top-3 sm:top-5 left-1/2 -translate-x-1/2 w-[94%] sm:w-[90%] max-w-3xl z-50 px-3 sm:px-5 py-1.5 sm:py-2 glass-pill shadow-lg">
+        <nav class="flex flex-row justify-between items-center gap-1.5 sm:gap-4">
+
+            <!-- Wordmark (Tailored tracking: compact on mobile, wide editorial on desktop) -->
+            <div class="font-bold tracking-[0.16em] sm:tracking-[0.42em] text-foreground text-[9.5px] sm:text-[11px] uppercase whitespace-nowrap select-none shrink-0">
+                 &nbsp;THE&nbsp;PORTFOLIO
             </div>
-            <div class="flex items-center gap-6 md:gap-10 font-medium text-[11px] uppercase tracking-widest w-full md:w-auto justify-center md:justify-end">
-                <a class="nav-link-hover text-primary p-2 md:p-0 flex items-center justify-center transition-all" href="index.html">
+
+            <!-- Nav Links & Controls (Evenly spaced, identical touch footprints) -->
+            <div class="shrink-0 flex items-center gap-1 sm:gap-2 font-semibold text-[10px] sm:text-[11px] uppercase tracking-widest">
+                <!-- Home Link (Active) -->
+                <a class="nav-icon-btn is-active sm:w-auto sm:h-auto sm:px-3 sm:py-1.5 sm:rounded-full" href="index.html" aria-label="Home">
                     <span class="nav-label">Home</span>
-                    <span class="material-symbols-outlined nav-icon">home</span>
+                    <span class="material-symbols-outlined nav-icon text-[16px] sm:text-[18px]">home</span>
                 </a>
-                <a class="nav-link-hover text-muted-foreground hover:text-primary transition-colors p-2 md:p-0 flex items-center justify-center transition-all" href="gallery.html">
+
+                <!-- Gallery Link -->
+                <a class="nav-icon-btn sm:w-auto sm:h-auto sm:px-3 sm:py-1.5 sm:rounded-full" href="gallery.html" aria-label="Gallery">
                     <span class="nav-label">Gallery</span>
-                    <span class="material-symbols-outlined nav-icon">grid_view</span>
+                    <span class="material-symbols-outlined nav-icon text-[16px] sm:text-[18px]">grid_view</span>
                 </a>
-                
-                <div class="flex items-center gap-3">
-                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-muted transition-colors flex items-center justify-center">
-                        <span class="material-symbols-outlined text-[20px]">dark_mode</span>
+
+                <!-- Balanced Vertical Divider -->
+                <div class="h-3 sm:h-3.5 w-px bg-border/80 mx-0.5 sm:mx-1 shrink-0"></div>
+
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="nav-icon-btn" aria-label="Toggle theme">
+                    <span class="material-symbols-outlined text-[15px] sm:text-[17px]">dark_mode</span>
+                </button>
+
+                <!-- Contact Dropdown -->
+                <div class="relative">
+                    <button id="contact-btn" aria-haspopup="true" aria-expanded="false"
+                        class="h-7 sm:h-8 px-2.5 sm:px-3.5 rounded-full bg-primary text-primary-foreground font-semibold text-[9.5px] sm:text-[11px] tracking-wide flex items-center gap-1 shadow-sm hover:opacity-90 active:scale-95 transition-all shrink-0">
+                        Contact <span class="material-symbols-outlined text-[11px] sm:text-[13px]">expand_more</span>
                     </button>
-                    <div class="relative group">
-                        <button class="bg-primary text-primary-foreground px-5 py-2 rounded-full text-[10px] font-bold hover:opacity-90 transition-all flex items-center gap-2">
-                            Contact <span class="material-symbols-outlined text-xs">expand_more</span>
-                        </button>
-                        <div class="absolute right-0 mt-3 w-56 glass-panel rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-right scale-95 group-hover:scale-100 p-2 z-50 backdrop-blur-xl">
-                            <a href="https://www.facebook.com/migolxlr" target="_blank" class="dropdown-item flex items-center gap-3 pl-6 py-2.5 rounded-xl text-[11px] font-bold">
-                                <span class="material-symbols-outlined text-base text-blue-500">thumb_up</span> Facebook
-                            </a>
-                            <a href="https://www.instagram.com/migolxlr/" target="_blank" class="dropdown-item flex items-center gap-3 pl-6 py-2.5 rounded-xl text-[11px] font-bold">
-                                <span class="material-symbols-outlined text-base text-pink-500">photo_camera</span> Instagram
-                            </a>
+
+                    <!-- Solid High-Contrast Glass Dropdown -->
+                    <div id="contact-dropdown"
+                        class="absolute right-0 mt-3 w-60 sm:w-64 max-w-[calc(100vw-2rem)] glass-dropdown rounded-2xl opacity-0 invisible scale-95 transition-all duration-200 transform origin-top-right p-3 z-50 space-y-1.5">
+                        <div class="flex items-center justify-between px-2 pb-1 border-b border-border/50">
+                            <span class="tech-bracket">CONNECT // CHANNELS</span>
+                            <span class="text-[9px] text-muted-foreground/60">●</span>
                         </div>
+
+                        <a href="https://www.facebook.com/migolxlr" target="_blank" class="social-link social-link-fb">
+                            <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center shrink-0 shadow-sm shadow-blue-500/30">
+                                <span class="material-symbols-outlined text-[15px] text-white">thumb_up</span>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-[11px] font-bold text-foreground">Facebook</p>
+                                <p class="text-[9px] text-muted-foreground">@migolxlr</p>
+                            </div>
+                            <span class="material-symbols-outlined text-[14px] text-muted-foreground social-link-arrow">arrow_forward</span>
+                        </a>
+
+                        <a href="https://www.instagram.com/migolxlr/" target="_blank" class="social-link social-link-ig">
+                            <div class="w-8 h-8 rounded-full flex items-center justify-center shrink-0 shadow-sm shadow-pink-500/30" style="background: linear-gradient(135deg, #f97316, #ec4899, #a855f7);">
+                                <span class="material-symbols-outlined text-[15px] text-white">photo_camera</span>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-[11px] font-bold text-foreground">Instagram</p>
+                                <p class="text-[9px] text-muted-foreground">@migolxlr</p>
+                            </div>
+                            <span class="material-symbols-outlined text-[14px] text-muted-foreground social-link-arrow">arrow_forward</span>
+                        </a>
+
+                        <a href="mailto:miguelmatiragelbolingo@gmail.com" class="social-link social-link-email">
+                            <div class="w-8 h-8 rounded-full bg-foreground flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-[15px] text-background">mail</span>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-[11px] font-bold text-foreground">Email</p>
+                                <p class="text-[9px] text-muted-foreground truncate">miguelmatiragelbolingo...</p>
+                            </div>
+                            <span class="material-symbols-outlined text-[14px] text-muted-foreground social-link-arrow">arrow_forward</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main class="pt-32 pb-20 px-4 md:px-8 max-w-7xl mx-auto space-y-12">
-    <!-- Hero Section (Restored Structure) -->
-    <section class="max-w-7xl mx-auto px-4 md:px-8 py-0 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative overflow-visible">
-        <!-- Floating Ambient Background -->
-        <div class="absolute top-0 right-0 w-[50%] h-full bg-primary/5 -skew-x-12 transform origin-top-right -z-10 blur-[120px] pointer-events-none"></div>
-        
-        <div class="lg:col-span-7 space-y-6 md:space-y-10 text-center md:text-left flex flex-col items-center md:items-start">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-widest border border-primary/20 transition-all hover:bg-primary/20">
-                <span class="w-2 h-2 rounded-full bg-online animate-pulse-green shadow-[0_0_10px_rgba(34,197,94,0.5)]"></span>
-                Available for Projects
-            </div>
-            <h1 class="text-4xl sm:text-6xl lg:text-[5.5rem] font-bold tracking-tight text-foreground leading-[1.05]">
-                Digital Curator <br>
-                <span class="text-primary italic">& Photographer.</span>
-            </h1>
-            <p class="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-xl leading-relaxed">
-                Merging technical precision with visual artistry. Capturing life through high-end lenses and clean, performant lines of code.
-            </p>
-            <div class="flex flex-wrap justify-center md:justify-start gap-5 pt-4">
-                <a href="gallery.html" class="bg-primary text-primary-foreground px-10 py-5 rounded-full font-bold text-xs tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-primary/20 flex items-center gap-3">
-                    Enter Gallery
-                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                </a>
-                <a href="#biography" class="learn-more-btn px-8 py-5 rounded-full font-bold text-xs tracking-widest hover:bg-muted transition-all flex items-center gap-2">
-                    Learn More
-                </a>
-            </div>
-        </div>
+    <!-- Main Content (Dynamic safe-area padding ensures zero overlap with navbar) -->
+    <main class="pt-24 sm:pt-28 md:pt-32 pb-20 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto space-y-10 sm:space-y-14">
 
-        <!-- Right Profile Image -->
-        <div class="lg:col-span-5 relative group">
-            <div class="aspect-[4/5] rounded-[2.5rem] overflow-hidden bg-muted relative border border-border/50 shadow-2xl transition-all duration-500 group-hover:scale-[1.01]">
-                <img alt="Miguel Matira Gelbolingo" class="w-full h-full object-cover transition-all duration-1000" src="./assets/IMG_4126_noGLOW.webp" loading="lazy">
-                <div class="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                
-                <!-- Overlay Name Card -->
-                <div class="absolute bottom-6 left-6 right-6 glass-panel p-6 rounded-3xl shadow-2xl space-y-1 border-primary/20">
-                    <p class="font-bold text-lg tracking-tight">Miguel Matira Gelbolingo</p>
-                    <p class="text-[9px] font-black uppercase tracking-widest text-primary opacity-80 leading-relaxed">PHOTOGRAPHER | VIDEOGRAPHER | EDITOR | DEVELOPER</p>
+        <!-- Hero Section -->
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+
+            <!-- Left: Hero Text -->
+            <div class="lg:col-span-7 space-y-5 sm:space-y-8 text-center md:text-left flex flex-col items-center md:items-start">
+
+                <!-- Technical Status Badge (Matches Catalog Badge) -->
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/5 text-foreground border border-border/70 hover:border-border transition-all">
+                    <span class="w-2 h-2 rounded-full bg-online animate-pulse-green"></span>
+                    <span class="tech-bracket">STATUS // AVAILABLE FOR PROJECTS</span>
+                </div>
+
+                <!-- Headline -->
+                <h1 class="text-4xl sm:text-5xl lg:text-[5.25rem] font-bold tracking-tight leading-[1.08] text-foreground">
+                    photography.<br>
+                    film.&nbsp;<span class="text-muted-foreground italic font-semibold">vision.</span>
+                </h1>
+
+                <!-- Tagline -->
+                <p class="text-sm sm:text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed">
+                    a freelance photographer and videographer based in Malabon. I specialize in weddings, events, portraits, and creative film projects: capturing every authentic moment with detail and heart.
+                </p>
+
+                <!-- Technical Divider (Now 100% Symmetrical with dashed lines on BOTH sides) -->
+                <div class="w-full flex items-center gap-3 pt-2 text-muted-foreground/40 font-mono text-xs">
+                    <span>+</span>
+                    <div class="h-px flex-grow border-t border-dashed border-border/70"></div>
+                    <span class="tech-bracket px-2">MANILA / MALABON · 2026</span>
+                    <div class="h-px flex-grow border-t border-dashed border-border/70"></div>
+                    <span>+</span>
+                </div>
+
+                <!-- CTAs -->
+                <div class="flex flex-wrap justify-center md:justify-start gap-3.5 pt-1">
+                    <a href="gallery.html" class="bg-primary text-primary-foreground px-7 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-[11px] tracking-widest hover:opacity-85 active:scale-95 transition-all shadow-md flex items-center gap-2">
+                        view selected works
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                    <a href="#about" class="learn-more-btn px-7 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-[11px] tracking-widest flex items-center gap-2">
+                        about the creator
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
 
-        <!-- Summary & Bento Grid -->
-        <section id="biography" class="grid grid-cols-1 lg:grid-cols-3 gap-6 reveal">
-            <div class="lg:col-span-2 bento-card p-10 space-y-8">
+            <!-- Right: Profile Card -->
+            <div class="lg:col-span-5 relative group w-full max-w-md mx-auto lg:max-w-none">
+                <div class="aspect-[4/5] rounded-[2rem] overflow-hidden bg-muted relative border border-border/60 shadow-xl transition-all duration-700 group-hover:scale-[1.01]">
+                    <img alt="Miguel Matira Gelbolingo, photographer and videographer"
+                        class="w-full h-full object-cover transition-all duration-1000"
+                        src="./assets/IMG_4126_noGLOW.webp" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                    <!-- Top Reticle Micro-Tag -->
+                    <div class="photo-badge">
+                        <span>●</span> REC // PRODUCER
+                    </div>
+
+                    <!-- Overlay Name Card -->
+                    <div class="absolute bottom-4 left-4 right-4 sm:bottom-5 sm:left-5 sm:right-5 glass-panel p-4 pl-5 pb-5 sm:p-5 sm:pl-6 sm:pb-6 rounded-2xl shadow-xl space-y-1">
+                        <div class="flex justify-between items-baseline">
+                            <p class="font-bold text-sm sm:text-base tracking-tight text-foreground">Miguel Matira Gelbolingo</p>
+                            <span class="tech-bracket">MMG // 01</span>
+                        </div>
+                        <p class="text-[9px] font-bold uppercase tracking-widest text-muted-foreground leading-relaxed">
+                            Photographer · Videographer · Editor
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Biography & Location (Bento Grid) -->
+        <section id="about" class="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 reveal">
+
+            <!-- Biography Card -->
+            <div class="lg:col-span-2 bento-card bento-card-padded p-5 pl-6 pb-6 sm:p-7 sm:pl-8 sm:pb-8 md:p-8 md:pl-9 md:pb-9 space-y-6 sm:space-y-8 flex flex-col justify-between">
                 <div class="space-y-4">
-                    <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-primary">Biography</h2>
-                    <p class="text-foreground leading-relaxed text-lg">A freelancer specializing in <strong>photography</strong>, <strong>videography</strong>, <strong>video/photo editing</strong>, <strong>graphic design</strong>, and <strong>web design</strong>. Loves to create creative digital works, and performs prenups and wedding photos. Also proficient in modern web development and computer system servicing.</p>
-                </div>
-                <div class="flex flex-col sm:flex-row gap-8">
-                    <div class="flex items-baseline gap-3">
-                        <p class="text-4xl font-bold text-primary tracking-tighter">3+</p>
-                        <p class="text-[11px] font-bold uppercase tracking-widest opacity-60">Years XP</p>
+                    <div class="flex items-center justify-between">
+                        <span class="tech-bracket">[ 01 // BIOGRAPHY ]</span>
+                        <span class="text-muted-foreground/40 font-mono text-xs">+</span>
                     </div>
-                    <div class="flex items-baseline gap-3">
-                        <p class="text-4xl font-bold text-primary tracking-tighter">30+</p>
-                        <p class="text-[11px] font-bold uppercase tracking-widest opacity-60">Projects</p>
+                    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">dedicated to capturing genuine human stories.</h2>
+                    <p class="text-muted-foreground leading-relaxed text-sm sm:text-base">
+                        I am Miguel — a creative freelancer from Malabon, Philippines. With a background of blending digital art and technical media systems, I work hands-on with clients to craft heartfelt wedding memories, dynamic event visuals, and polished portraits.
+                    </p>
+                </div>
+
+                <div class="pt-4 border-t border-border/50 flex flex-wrap gap-8 sm:gap-12">
+                    <div class="space-y-0.5">
+                        <p class="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">3+</p>
+                        <p class="tech-bracket">YEARS // EXPERIENCE</p>
+                    </div>
+                    <div class="space-y-0.5">
+                        <p class="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">30+</p>
+                        <p class="tech-bracket">PROJECTS // PRODUCED</p>
+                    </div>
+                    <div class="space-y-0.5">
+                        <p class="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">100%</p>
+                        <p class="tech-bracket">CLIENT // COMMITMENT</p>
                     </div>
                 </div>
             </div>
+
             <!-- Location Card -->
-            <div class="bento-card p-10 flex flex-col justify-between group">
-                <div class="space-y-4">
-                    <span class="material-symbols-outlined text-primary text-3xl">location_on</span>
-                    <h3 class="text-xl font-bold tracking-tight">Based in</h3>
-                    <p class="text-muted-foreground text-sm leading-relaxed">Malabon, Philippines. Available worldwide for remote and on-site projects.</p>
+            <div class="bento-card bento-card-padded p-5 pl-6 pb-6 sm:p-7 sm:pl-8 sm:pb-8 md:p-8 md:pl-9 md:pb-9 flex flex-col justify-between group">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="tech-bracket">[ LOC // PHILIPPINES ]</span>
+                        <span class="material-symbols-outlined text-primary text-xl">location_on</span>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold tracking-tight">based in Malabon</h3>
+                    <p class="text-muted-foreground text-xs sm:text-sm leading-relaxed">
+                        Available across Metro Manila, nationwide for destination shoots, and open to remote digital editing.
+                    </p>
                 </div>
-                <div class="mt-8 rounded-3xl overflow-hidden h-32 relative border border-border/50">
-                    <img src="./assets/malabon.webp" alt="Malabon, Philippines" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0">
+                <div class="mt-5 rounded-2xl overflow-hidden h-32 relative border border-border/60">
+                    <img src="./assets/malabon.webp" alt="Malabon, Philippines" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0">
+                    <div class="absolute bottom-2 left-2 px-2 py-0.5 rounded-md bg-black/60 backdrop-blur-md text-[8px] font-mono text-white/90">
+                        14°39'26"N · 120°57'22"E
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience & Skills Section -->
-        <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 reveal">
-            <!-- Experience -->
-            <div class="lg:col-span-8 bento-card p-10 space-y-12">
-                <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-primary">Journey</h2>
-                <div class="space-y-12">
-                    <div class="group flex gap-8">
-                        <div class="text-[11px] font-bold uppercase tracking-widest text-muted-foreground vertical-text pt-2 whitespace-nowrap opacity-40">2024 — NOW</div>
-                        <div class="space-y-3">
-                            <h3 class="text-2xl font-bold tracking-tight">Freelance Production</h3>
-                            <p class="text-muted-foreground text-sm leading-relaxed max-w-xl">Capturing weddings, school events, and corporate milestones, transforming raw moments into polished digital legacies.</p>
+        <!-- Journey & Craft -->
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 reveal">
+
+            <!-- Journey Timeline -->
+            <div class="lg:col-span-8 bento-card bento-card-padded p-5 pl-6 pb-6 sm:p-7 sm:pl-8 sm:pb-8 md:p-8 md:pl-9 md:pb-9 space-y-7 sm:space-y-9">
+                <div class="flex items-center justify-between">
+                    <span class="tech-bracket">[ 02 // TIMELINE & JOURNEY ]</span>
+                    <span class="text-muted-foreground/40 font-mono text-xs">+</span>
+                </div>
+
+                <div class="space-y-8 sm:space-y-10">
+                    <!-- Timeline 1 -->
+                    <div class="flex gap-4 sm:gap-7">
+                        <div class="text-[10px] font-mono font-bold uppercase tracking-widest text-muted-foreground/60 whitespace-nowrap pt-1.5 vertical-text">
+                            2024 — NOW
+                        </div>
+                        <div class="space-y-2 border-l border-border/60 pl-4 sm:pl-6">
+                            <div class="flex items-center gap-2">
+                                <h3 class="text-xl sm:text-2xl font-bold tracking-tight">freelance creative production</h3>
+                                <span class="tech-bracket px-2 py-0.5 rounded bg-muted/60 text-[9px]">ACTIVE</span>
+                            </div>
+                            <p class="text-muted-foreground text-xs sm:text-sm leading-relaxed max-w-xl">
+                                Directing, shooting, and editing photography and film for weddings, commercial events, and personal portraits. Managing the entire process from raw camera to finished color-graded and high-quality media.
+                            </p>
                         </div>
                     </div>
-                    <div class="group flex gap-8">
-                        <div class="text-[11px] font-bold uppercase tracking-widest text-muted-foreground vertical-text pt-2 whitespace-nowrap opacity-40">2021 — 2023</div>
-                        <div class="space-y-3">
-                            <h3 class="text-2xl font-bold tracking-tight">Android OSS Development</h3>
-                            <p class="text-muted-foreground text-sm leading-relaxed max-w-xl">Developing bloat-free firmware for Xiaomi devices, enhancing efficiency and user experience through proprietary device codes.</p>
+
+                    <!-- Timeline 2 -->
+                    <div class="flex gap-4 sm:gap-7">
+                        <div class="text-[10px] font-mono font-bold uppercase tracking-widest text-muted-foreground/60 whitespace-nowrap pt-1.5 vertical-text">
+                            2021 — 2023
+                        </div>
+                        <div class="space-y-2 border-l border-border/60 pl-4 sm:pl-6">
+                            <div class="flex items-center gap-2">
+                                <h3 class="text-xl sm:text-2xl font-bold tracking-tight">Android Open Source Development (AOSP)</h3>
+                                <span class="tech-bracket px-2 py-0.5 rounded bg-muted/60 text-[9px]">PAST</span>
+                            </div>
+                            <p class="text-muted-foreground text-xs sm:text-sm leading-relaxed max-w-xl">
+                                Built and tuned bloat-free custom operating system builds for mobile hardware. A deep passion for optimization, learning system processes, and attention to UI/UX detail 
+                                <i>(a hobby which introduced me into development).</i>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Skills (Branching Schematic) -->
-            <div class="lg:col-span-4 bento-card p-10 space-y-8 min-h-[400px]">
-                <div class="stack-branch h-full border-l-2 border-primary/10 ml-4 pl-10 space-y-12">
-                    <!-- Creative Branch -->
+            <!-- Craft / Tools -->
+            <div class="lg:col-span-4 bento-card bento-card-padded p-5 pl-6 pb-6 sm:p-7 sm:pl-8 sm:pb-8 md:p-8 md:pl-9 md:pb-9 space-y-6">
+                <div class="flex items-center justify-between">
+                    <span class="tech-bracket">[ 03 // MY CRAFT ]</span>
+                    <span class="text-muted-foreground/40 font-mono text-xs">+</span>
+                </div>
+
+                <div class="stack-branch border-l border-border/60 ml-2 pl-6 sm:pl-8 space-y-6 sm:space-y-8">
+                    <!-- Tool 1 -->
                     <div class="stack-item-node group">
-                        <div class="flex items-center gap-4 mb-4">
-                            <span class="material-symbols-outlined text-primary p-2 bg-primary/5 rounded-xl transition-all group-hover:bg-primary group-hover:text-primary-foreground">palette</span>
-                            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-primary">Creative</h3>
+                        <div class="flex items-center gap-2.5 mb-1">
+                            <span class="material-symbols-outlined text-base text-muted-foreground group-hover:text-foreground transition-colors">movie</span>
+                            <p class="text-sm font-bold text-foreground">DaVinci Resolve</p>
                         </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1.5 bg-muted/30 border border-border/30 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all hover:bg-background">Resolve</span>
-                            <span class="px-3 py-1.5 bg-muted/30 border border-border/30 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all hover:bg-background">Lightroom</span>
-                            <span class="px-3 py-1.5 bg-muted/30 border border-border/30 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all hover:bg-background">Photoshop</span>
-                        </div>
+                        <p class="text-xs text-muted-foreground">cinematic color grading & full video editing.</p>
                     </div>
 
-                    <!-- Development Branch -->
+                    <!-- Tool 2 -->
                     <div class="stack-item-node group">
-                        <div class="flex items-center gap-4 mb-4">
-                            <span class="material-symbols-outlined text-primary p-2 bg-primary/5 rounded-xl transition-all group-hover:bg-primary group-hover:text-primary-foreground">code</span>
-                            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-primary">Development</h3>
+                        <div class="flex items-center gap-2.5 mb-1">
+                            <span class="material-symbols-outlined text-base text-muted-foreground group-hover:text-foreground transition-colors">photo_camera</span>
+                            <p class="text-sm font-bold text-foreground">Adobe Lightroom</p>
                         </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1.5 bg-muted/30 border border-border/30 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all hover:bg-background">JS (ES6+)</span>
-                            <span class="px-3 py-1.5 bg-muted/30 border border-border/30 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all hover:bg-background">Tailwind</span>
-                            <span class="px-3 py-1.5 bg-muted/30 border border-border/30 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all hover:bg-background">PHP</span>
+                        <p class="text-xs text-muted-foreground">color science, correction, tone curves & batch processing.</p>
+                    </div>
+
+                    <!-- Tool 3 -->
+                    <div class="stack-item-node group">
+                        <div class="flex items-center gap-2.5 mb-1">
+                            <span class="material-symbols-outlined text-base text-muted-foreground group-hover:text-foreground transition-colors">brush</span>
+                            <p class="text-sm font-bold text-foreground">Adobe Photoshop</p>
                         </div>
+                        <p class="text-xs text-muted-foreground">high-end portrait retouching, clean-up, compositing, and also graphic designs.</p>
+                    </div>
+
+                    <!-- Tool 4 -->
+                    <div class="stack-item-node group">
+                        <div class="flex items-center gap-2.5 mb-1">
+                            <span class="material-symbols-outlined text-base text-muted-foreground group-hover:text-foreground transition-colors">design_services</span>
+                            <p class="text-sm font-bold text-foreground">Canva Pro</p>
+                        </div>
+                        <p class="text-xs text-muted-foreground">quick edits, graphics, presentations, and more.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Technical Arsenal (Bento) -->
-        <section class="bento-card p-10 lg:p-16 space-y-12 reveal">
-            <div class="space-y-4 text-center md:text-left">
-                <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-primary">Arsenal</h2>
-                <h3 class="text-3xl md:text-4xl font-bold tracking-tight">Tools of the Trade</h3>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div class="space-y-6">
-                    <span class="material-symbols-outlined text-primary text-3xl">photo_library</span>
-                    <h4 class="font-bold uppercase tracking-widest text-sm">Creative</h4>
-                    <ul class="space-y-4 text-muted-foreground text-xs font-semibold uppercase tracking-wider">
-                        <li class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-base">movie</span> DaVinci Resolve
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-base">photo_camera</span> Adobe Lightroom
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-base">brush</span> Adobe Photoshop
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-base">design_services</span> Canva
-                        </li>
-                    </ul>
+        <!-- Background / Education -->
+        <section class="bento-card bento-card-padded p-5 pl-6 pb-6 sm:p-7 sm:pl-8 sm:pb-8 md:p-10 md:pl-11 md:pb-11 overflow-hidden relative reveal">
+            <div class="flex flex-col lg:flex-row justify-between items-start gap-6 sm:gap-10 relative z-10">
+                <div class="max-w-xs space-y-2">
+                    <span class="tech-bracket">[ 04 // FOUNDATION ]</span>
+                    <h2 class="text-2xl font-bold tracking-tight">my education & certifications</h2>
+                    <p class="text-muted-foreground text-xs sm:text-sm leading-relaxed">
+                        My formal training in digital animation, programming, and computer technology. Also includes my current program for my ongoing college education.
+                    </p>
                 </div>
-                <div class="space-y-6">
-                    <span class="material-symbols-outlined text-primary text-3xl">terminal</span>
-                    <h4 class="font-bold uppercase tracking-widest text-sm">Development</h4>
-                    <ul class="space-y-4 text-muted-foreground text-xs font-semibold uppercase tracking-wider">
-                        <li class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-base">html</span> HTML5 / CSS3
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-base">javascript</span> JavaScript (ES6+)
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-base">layers</span> Tailwind CSS
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-base">database</span> PHP / MySQL
-                        </li>
-                    </ul>
+
+                <div class="flex-1 w-full grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                    <!-- Tinajeros -->
+                    <div class="p-5 pl-6 pb-6 sm:p-6 sm:pl-7 sm:pb-7 rounded-2xl bg-card border border-border/70 space-y-4 hover:border-border transition-all flex flex-col justify-between">
+                        <div class="space-y-1.5">
+                            <span class="tech-bracket text-emerald-500">SENIOR HIGH SCHOOL</span>
+                            <h4 class="font-bold text-base tracking-tight text-foreground">TVL-ICT: Animation & Programming</h4>
+                            <p class="text-muted-foreground text-xs">Tinajeros National High School</p>
+                        </div>
+                        <div class="w-fit px-3 py-1 bg-muted/60 border border-border/60 rounded-full tech-bracket">
+                            2024 – 2026
+                        </div>
+                    </div>
+
+                    <!-- VIVA -->
+                    <div class="p-5 pl-6 pb-6 sm:p-6 sm:pl-7 sm:pb-7 rounded-2xl bg-card border border-border/70 space-y-4 hover:border-border transition-all flex flex-col justify-between">
+                        <div class="space-y-1.5">
+                            <span class="tech-bracket text-blue-500">TECHNICAL-VOCATIONAL</span>
+                            <h4 class="font-bold text-base tracking-tight text-foreground">Animation NCII</h4>
+                            <p class="text-muted-foreground text-xs">VIVA EXCEL INC.</p>
+                        </div>
+                        <div class="w-fit px-3 py-1 bg-muted/60 border border-border/60 rounded-full tech-bracket">
+                            2025 – 2026
+                        </div>
+                    </div>
+
+                    <!-- PUP -->
+                    <div class="p-5 pl-6 pb-6 sm:p-6 sm:pl-7 sm:pb-7 rounded-2xl bg-card border border-border/70 space-y-4 hover:border-border transition-all flex flex-col justify-between">
+                        <div class="space-y-1.5">
+                            <span class="tech-bracket text-red-500">COLLEGE</span>
+                            <h4 class="font-bold text-base tracking-tight text-foreground">Bachelor of Arts in Broadcasting</h4>
+                            <p class="text-muted-foreground text-xs">Polytechnic University of the Philippines</p>
+                        </div>
+                        <div class="w-fit px-3 py-1 bg-muted/60 border border-border/60 rounded-full tech-bracket">
+                            2026 - Present (ongoing)
                 </div>
-                <div class="space-y-6">
-                    <span class="material-symbols-outlined text-primary text-3xl">construction</span>
-                    <h4 class="font-bold uppercase tracking-widest text-sm">Management</h4>
-                    <ul class="space-y-4 text-muted-foreground text-xs font-semibold uppercase tracking-wider">
-                        <li class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-base">task_alt</span> Project Management
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-base">account_tree</span> Asset Pipeline
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-base">memory</span> System Servicing
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-base">devices</span> UI/UX Strategy
-                        </li>
-                    </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Education Section -->
-        <section class="bento-card p-10 lg:p-16 space-y-12 overflow-hidden relative reveal">
-            <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-32 -mt-32 blur-3xl"></div>
-            <div class="flex flex-col lg:flex-row justify-between items-start gap-12 relative z-10">
-                <div class="max-w-md space-y-4">
-                    <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-primary">Education</h2>
-                    <p class="text-foreground font-medium leading-relaxed">Continuous learning is at the heart of my professional philosophy, combining formal education with industry-standard certifications.</p>
-                </div>
-                <div class="flex-1 w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <!-- Tinajeros Card -->
-                    <div class="p-8 rounded-3xl bg-gradient-to-br from-green-500/10 to-yellow-500/10 border border-green-500/20 space-y-6 hover:from-green-500/20 hover:to-yellow-500/20 transition-all flex flex-col justify-between">
-                        <div class="space-y-4">
-                            <h4 class="font-bold text-xl tracking-tight">TVL-ICT: Animation & Programming</h4>
-                            <p class="text-muted-foreground text-xs font-semibold">Tinajeros National High School</p>
-                        </div>
-                        <div class="w-fit px-4 py-1.5 bg-background/50 border border-border/50 rounded-full text-[10px] font-bold text-primary uppercase tracking-widest backdrop-blur-sm">
-                            2024 - 2026
-                        </div>
-                    </div>
-                    <!-- VIVA Card -->
-                    <div class="p-8 rounded-3xl bg-gradient-to-br from-red-500/10 to-gray-500/10 border border-red-500/20 space-y-6 hover:from-red-500/20 hover:to-gray-500/20 transition-all flex flex-col justify-between">
-                        <div class="space-y-4">
-                            <h4 class="font-bold text-xl tracking-tight">TESDA: Animation NCII</h4>
-                            <p class="text-muted-foreground text-xs font-semibold">VIVA EXCEL INC.</p>
-                        </div>
-                        <div class="w-fit px-4 py-1.5 bg-background/50 border border-border/50 rounded-full text-[10px] font-bold text-primary uppercase tracking-widest backdrop-blur-sm">
-                            2025 - 2026
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Footer -->
-    <footer class="w-full mt-12 relative border-t border-border/50 backdrop-blur-md bg-background/50">
+    <footer class="w-full mt-14">
         <div class="footer-gradient h-px w-full"></div>
-        <div class="max-w-7xl mx-auto px-4 md:px-8 py-10 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
-            <div class="space-y-4">
-                <div class="text-base font-bold tracking-tight text-primary">T&nbsp;H&nbsp;E&nbsp;&nbsp;&nbsp;P&nbsp;O&nbsp;R&nbsp;T&nbsp;F&nbsp;O&nbsp;L&nbsp;I&nbsp;O</div>
-                <p class="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground opacity-60">
-                    © 2026 Miguel Matira Gelbolingo. Built with Gemini & Antigravity.
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-10 flex flex-col md:flex-row justify-between items-center gap-5 text-center md:text-left">
+            <div class="space-y-1">
+                <div class="font-bold tracking-[0.22em] sm:tracking-[0.45em] text-[10px] sm:text-[11px] uppercase text-foreground select-none">
+                    T&nbsp;H&nbsp;E&nbsp;&nbsp;P&nbsp;O&nbsp;R&nbsp;T&nbsp;F&nbsp;O&nbsp;L&nbsp;I&nbsp;O
+                </div>
+                <p class="tech-bracket">
+                    © 2026 MIGUEL MATIRA GELBOLINGO · ALL RIGHTS RESERVED
                 </p>
             </div>
-            <div class="flex flex-wrap justify-center gap-10">
-                <a class="text-[11px] font-bold uppercase tracking-widest hover:text-primary transition-colors" href="https://www.facebook.com/migolxlr" target="_blank">Facebook</a>
-                <a class="text-[11px] font-bold uppercase tracking-widest hover:text-primary transition-colors" href="https://www.instagram.com/migolxlr/" target="_blank">Instagram</a>
-                <a class="text-[11px] font-bold uppercase tracking-widest hover:text-primary transition-colors" href="mailto:miguelmatiragelbolingo@gmail.com">Email</a>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a class="text-[11px] font-semibold tracking-wider text-muted-foreground hover:text-foreground transition-colors" href="https://www.facebook.com/migolxlr" target="_blank">Facebook</a>
+                <a class="text-[11px] font-semibold tracking-wider text-muted-foreground hover:text-foreground transition-colors" href="https://www.instagram.com/migolxlr/" target="_blank">Instagram</a>
+                <a class="text-[11px] font-semibold tracking-wider text-muted-foreground hover:text-foreground transition-colors" href="mailto:miguelmatiragelbolingo@gmail.com">Email</a>
             </div>
         </div>
     </footer>
 
     <!-- FAB -->
     <button onclick="window.location.href='mailto:miguelmatiragelbolingo@gmail.com'"
-        class="fixed bottom-8 right-8 w-14 h-14 bg-primary/80 rounded-full text-primary-foreground shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50 backdrop-blur-xl border border-primary/30">
-        <span class="material-symbols-outlined">mail</span>
+        aria-label="Send email"
+        class="fixed bottom-6 right-6 md:bottom-8 md:right-8 w-12 h-12 sm:w-14 sm:h-14 bg-primary rounded-full text-primary-foreground shadow-xl flex items-center justify-center hover:scale-105 active:scale-95 transition-all z-50 border border-primary/20">
+        <span class="material-symbols-outlined text-[19px] sm:text-[21px]">mail</span>
     </button>
 
 </body>
